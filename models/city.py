@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+
 """ City Module for HBNB project """
+
 from sqlalchemy import Column, ForeignKey, String
 from models.base_model import BaseModel, Base
 
 
 class City(BaseModel, Base):
+
     """
     >>City inherits from BaseModel and Base (respect the order)
     >>class attribute __tablename__ -
@@ -17,6 +20,7 @@ class City(BaseModel, Base):
             cant be null
             is a foreign key to states.id
     """
+    
     __tablename__ = "cities"
     name = Column(String(128), nullable=False)
     state_id = Column(String(60), ForeignKey("states.id"), nullable=False)
